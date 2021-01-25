@@ -3,12 +3,7 @@ provider "aws" {
 }
 
 terraform {
-  backend "s3" {
-    encrypt = true
-    bucket  = "theo-bucket"
-    region  = "eu-west-3"
-    key     = "instances_feugeas.tfstate"
-  }
+  backend "s3" {}
 }
 
 data "aws_ami" "ubuntu" {
