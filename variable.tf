@@ -1,7 +1,7 @@
 variable "bucket" {
   type = string
   description = "Terraform state bucket"
-  default = "ec2_terraform"
+  default = "tp-terraform-ynov"
 }
 
 variable "path" {
