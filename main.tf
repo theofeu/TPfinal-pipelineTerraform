@@ -1,8 +1,10 @@
-provider "aws" {
-  region     = var.region
-}
-
 terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "~>3.0"
+    }
+  }
   backend "s3" {}
 }
 
@@ -33,8 +35,8 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_security_group" "security_group_terraform_theo-ssh" {
-  name = "security_group_terraform_theo-ssh"
+resource "aws_security_group" "security_group_terraform_theo" {
+  name = "security_group_terraform_theo"
 
   ingress {
     description = "SSH from EC2"
